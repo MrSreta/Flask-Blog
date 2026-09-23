@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Blog</title></head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        {% if session.user_id %}
+        {% else %}
+        {% endif %}
+    </nav>
+
+    {% block content %}{% endblock %}
+</body>
+</html>
