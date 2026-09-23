@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head><title>My Blog</title></head>
+<head><title>My Blog</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        {% if session.user_id %}
-        {% else %}
-        {% endif %}
-    </nav>
+    <a href="/">Home</a>
+    {% if session.user_id %}
+        <a href="/new_post">New Post</a>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    {% endif %}
+</nav>
 
     {% block content %}{% endblock %}
 </body>

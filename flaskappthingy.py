@@ -41,7 +41,7 @@ def login():
             return "Invalid username or password."
         else:
             session["user_id"] = user["id"]
-            return redirect("/dashboard")
+            return redirect("/")
 
     return render_template("login.html")
 
